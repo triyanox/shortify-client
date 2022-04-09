@@ -1,16 +1,41 @@
 {
-  "private": true,
+  "name": "shortify",
+  "version": "1.0.0",
+  "description": "URL shortener service (clinet)",
+  "author": "Mohamed Achaq",
+  "license": "ISC",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/triyanox/shortify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/triyanox/shortify/issues"
+  },
+  "homepage": "https://github.com/triyanox/shortify#readme",
   "dependencies": {
+    "@headlessui/react": "^1.5.0",
+    "@types/lodash": "^4.14.181",
+    "axios": "^0.26.1",
+    "classnames": "^2.3.1",
+    "framer-motion": "^6",
+    "jwt-decode": "^3.1.2",
+    "lodash": "^4.17.21",
+    "nanoid": "^3.3.2",
     "next": "latest",
+    "next-themes": "^0.1.1",
+    "nextjs-progressbar": "^0.0.14",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-hot-toast": "^2.2.0",
+    "react-icons": "^4.3.1"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.2",
     "@types/node": "17.0.4",
     "@types/react": "17.0.38",
     "autoprefixer": "^10.4.0",

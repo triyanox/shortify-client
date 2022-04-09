@@ -1,23 +1,57 @@
-# Next.js + Tailwind CSS Example
+# URL shortener service (client)
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+## Description
 
-## Deploy your own
+This is a URL shortener service, which allows you to shorten long URLs,
+and then redirect to the original URL.
+This application is written in [Next.js](https://nextjs.org/) for the frontend, and [Node.js](https://nodejs.org/) for the backend using [Express](https://expressjs.com/) and [MongoDB](https://www.mongodb.com/)
+for the database.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+## Features
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+This application has the following features:
 
-## How to use
+- Beautiful UI with [Tailwind CSS](https://tailwindcss.com/)
+- Great user experience
+- Authentication
+- Authentication is done using [JWT](https://jwt.io/)
+- User profile
+- User management (register, login, logout, etc.)
+- User settings(change password, update profile,delete account, etc.)
+- Shorten URLs (create, read, update, delete)
+- Redirect to the original URL
+- Statistics
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## Installation
+
+To run this application locally , you need to have node.js and mongodb installed.
+
+## Usage
+
+First clone the repository then run the following commands:
+
+on the client directory:
 
 ```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-# or
-pnpm create next-app -- --example with-tailwindcss with-tailwindcss-app
+yarn install
+yarn dev
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+on the server directory:
+
+```bash
+npm install
+nodemon
+```
+
+on the root directory:
+
+```bash
+mongod
+```
+
+Then open the browser and go to http://localhost:3000/
+
+## License
+
+You can use this application for non-commercial purposes, but you cannot modify or redistribute it.
