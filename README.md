@@ -4,7 +4,7 @@
 
 This is a URL shortener service, which allows you to shorten long URLs,
 and then redirect to the original URL.
-This application is written in [Next.js](https://nextjs.org/) for the frontend, and [Node.js](https://nodejs.org/) for the backend using [Express](https://expressjs.com/) and [MongoDB](https://www.mongodb.com/)
+This application is written in [Next.js](https://nextjs.org/) and [Typescript](https://www.typescriptlang.org/) for the frontend, and [Node.js](https://nodejs.org/) for the backend using [Express](https://expressjs.com/) and [MongoDB](https://www.mongodb.com/)
 for the database.
 
 ## Features
