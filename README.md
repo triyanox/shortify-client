@@ -13,7 +13,7 @@ This application has the following features:
 
 - Beautiful UI with [Tailwind CSS](https://tailwindcss.com/)
 - Great user experience
-- Authentication
+- Authorization
 - Authentication is done using [JWT](https://jwt.io/)
 - User profile
 - User management (register, login, logout, etc.)
