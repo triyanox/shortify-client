@@ -24,10 +24,22 @@ const Hero = () => {
         </Link>
       </div>
       <div className="z-10 flex w-full flex-col  items-center justify-center p-2 dark:z-0 dark:hidden">
-        <Image src={light} width={512} height={512} alt="Mohamed Achaq" />
+        <Image
+          src={light}
+          width={512}
+          height={512}
+          alt="Shortify Light"
+          quality={100}
+        />
       </div>
       <div className="z-0 hidden flex-col items-center  justify-center p-2 dark:z-10 dark:flex dark:w-full">
-        <Image src={dark} width={512} height={512} alt="Mohamed Achaq" />
+        <Image
+          src={dark}
+          width={512}
+          height={512}
+          alt="Shortify Dark"
+          quality={100}
+        />
       </div>
     </section>
   )

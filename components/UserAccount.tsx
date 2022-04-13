@@ -3,6 +3,7 @@ import { BiHide, BiShowAlt } from 'react-icons/bi'
 import * as userService from '../services/userService'
 import light from '../assets/account-light.svg'
 import dark from '../assets/account-dark.svg'
+import pip from '../assets/account.svg'
 import Image from 'next/image'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
@@ -81,7 +82,7 @@ const UpdateUser = (props: Props) => {
   }
 
   return (
-    <section className="mt-8 mb-16 flex w-full flex-col-reverse items-center justify-center gap-y-8 px-10 md:px-24 lg:mt-4 lg:flex-row xl:px-20">
+    <section className="mt-8 mb-16 flex w-full flex-col items-center justify-center gap-8 px-10 md:px-24 xl:mt-12  xl:flex-row xl:items-start xl:px-20">
       <div className="mx-8 flex w-full flex-col items-center justify-center gap-4 sm:mx-16 lg:mx-0">
         <h1 className="mb-8 w-[26rem] animate-gradient-x bg-gradient-to-r from-[#FFBA49] to-[#EF5B5B] bg-clip-text text-left text-3xl text-transparent md:w-[24rem] lg:w-[28rem]">
           Update Your Account
@@ -142,25 +143,19 @@ const UpdateUser = (props: Props) => {
             </button>
           </div>
         </form>
-        <div className="mx-8 mt-12 flex w-full flex-col items-center justify-center gap-4 sm:mx-16 lg:mx-0">
-          <h1 className="mb-4 w-[26rem] animate-gradient-x bg-gradient-to-r from-[#FFBA49] to-[#EF5B5B] bg-clip-text text-left text-3xl text-transparent md:w-[24rem] lg:w-[28rem]">
-            Delete Your Account
-          </h1>
+      </div>
+      <div className="mx-8 flex w-full flex-col items-center justify-center gap-4 sm:mx-16 lg:mx-0">
+        <h1 className="mb-8 w-[26rem] animate-gradient-x bg-gradient-to-r from-[#FFBA49] to-[#EF5B5B] bg-clip-text text-left text-3xl text-transparent md:w-[24rem] lg:w-[28rem]">
+          Delete Your Account
+        </h1>
 
-          <button
-            onClick={openModal}
-            className="text-md w-[26rem]
+        <button
+          onClick={openModal}
+          className="text-md w-[26rem]
 rounded-lg bg-red-700 p-4 py-2 text-white transition-all duration-200 ease-in hover:scale-105 active:scale-90 dark:bg-red-600 dark:text-black  md:w-[24rem] md:text-lg lg:w-[28rem] "
-          >
-            Delete
-          </button>
-        </div>
-      </div>
-      <div className="z-10 hidden w-full flex-col items-center  justify-center p-2 dark:z-0 dark:hidden lg:flex">
-        <Image src={light} width={400} height={400} alt="Mohamed Achaq" />
-      </div>
-      <div className="z-0 hidden flex-col items-center  justify-center p-2 dark:z-10 dark:w-full dark:lg:flex">
-        <Image src={dark} width={400} height={400} alt="Mohamed Achaq" />
+        >
+          Delete
+        </button>
       </div>
       <Toaster position="bottom-right" reverseOrder={false} />
       <Transition appear show={isOpen} as={Fragment}>

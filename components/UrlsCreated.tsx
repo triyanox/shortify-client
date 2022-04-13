@@ -13,17 +13,21 @@ const UrlsCreated = () => {
   return (
     <section className="mt-8 w-full   items-center gap-2  px-8 py-2 md:px-24 xl:px-20">
       <div className="mb-8 grid w-full grid-rows-10 items-center">
-        {urlsCreated.map(
-          (
-            url: { short_url: string; original_url: string },
-            i: Key | null | undefined
-          ) => (
-            <UrlCard
-              shortUrl={url.short_url}
-              originalUrl={url.original_url}
-              key={i}
-            />
+        {urlsCreated ? (
+          urlsCreated.map(
+            (
+              url: { short_url: string; original_url: string },
+              i: Key | null | undefined
+            ) => (
+              <UrlCard
+                shortUrl={url.short_url}
+                originalUrl={url.original_url}
+                key={i}
+              />
+            )
           )
+        ) : (
+          <div />
         )}
       </div>
       <Pagination
