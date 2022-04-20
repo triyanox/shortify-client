@@ -55,14 +55,14 @@ const LogIn = () => {
     }
     const login = authService.loginUser(data)
     try {
-      const loggedIn = await login
-      const jwt = loggedIn.data
-      localStorage.setItem('jwt', jwt)
-      toast.promise(login, {
+       toast.promise(login, {
         loading: 'Loading',
         success: 'Successfully logged in , redirecting...',
         error: 'Unable to log in',
       })
+      const loggedIn = await login
+      const jwt = loggedIn.data
+      localStorage.setItem('jwt', jwt)
       setTimeout(() => {
         window.location.replace('/')
       }, 2000)
