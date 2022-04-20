@@ -17,12 +17,12 @@ const LogIn = () => {
         email: 'demo@shortify.com',
         password: 'Shortify@2022',
       })
-      await res
       toast.promise(res, {
         loading: 'Loading',
         success: 'Successfully logged in , redirecting...',
         error: 'Unable to log in',
       })
+      await res
       const jwt = (await res).data
       localStorage.setItem('jwt', jwt)
       window.location.href = '/'
