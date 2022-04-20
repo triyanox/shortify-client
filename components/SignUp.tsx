@@ -36,13 +36,14 @@ const SignUp = () => {
     }
     const register = userService.registerUser(data)
     try {
-      const registered = await register
-      localStorage.setItem('jwt', registered.headers['x-auth-token'])
-      toast.promise(register, {
+       toast.promise(register, {
         loading: 'Loading',
         success: 'Successfully registered , redirecting...',
         error: 'Unable to register',
       })
+      const registered = await register
+      localStorage.setItem('jwt', registered.headers['x-auth-token'])
+     
       setTimeout(() => {
         window.location.replace('/')
       }, 2000)
