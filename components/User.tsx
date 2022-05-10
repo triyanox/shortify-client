@@ -3,7 +3,7 @@ import Link from 'next/link'
 const User = (props: { name: string; email: string }) => {
   return (
     <section className="mt-16 flex w-full flex-row items-center  px-8 py-2 md:px-24 xl:px-20">
-      <div className="flex h-16 w-full items-center gap-4  rounded-xl bg-zinc-100 px-2 text-[#FFBA49] dark:bg-zinc-900  dark:text-[#EF5B5B] md:px-12 ">
+      <div className="flex h-16 w-full items-center gap-4  rounded-xl  px-2 text-[#FFBA49]   dark:text-[#EF5B5B] md:px-12 ">
         <Link href="/account" passHref>
           <a className="text-end group flex flex-row justify-center gap-x-4 text-3xl  md:text-4xl">
             <FaUserAstronaut />
