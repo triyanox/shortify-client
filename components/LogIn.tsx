@@ -81,7 +81,7 @@ const LogIn = () => {
           className="flex w-full flex-col items-center justify-center gap-2"
           onSubmit={handleSubmit}
         >
-          <div className="mb-4 w-3/4 md:w-[24rem] lg:w-[28rem]">
+          <div className="mb-4 w-5/6 md:w-[24rem] lg:w-[28rem]">
             <input
               className="w-full appearance-none  rounded-lg bg-gray-200 py-3 px-4 leading-tight text-gray-900  outline-none transition-all duration-500 focus:outline focus:outline-[#FFBA49] dark:bg-zinc-800 dark:text-gray-200 dark:focus:outline dark:focus:outline-[#EF5B5B]"
               id="email"
@@ -92,7 +92,7 @@ const LogIn = () => {
               placeholder="Email"
             />
           </div>
-          <div className=" w-3/4 md:w-[24rem] lg:w-[28rem]">
+          <div className=" w-5/6 md:w-[24rem] lg:w-[28rem]">
             <input
               className="w-full appearance-none  rounded-lg bg-gray-200 py-3 px-4 leading-tight text-gray-900  outline-none transition-all duration-500 focus:outline focus:outline-[#FFBA49] dark:bg-zinc-800 dark:text-gray-200 dark:focus:outline dark:focus:outline-[#EF5B5B]"
               id="password"
@@ -112,7 +112,7 @@ const LogIn = () => {
             </button>
           </div>
 
-          <div className="flex w-[26rem] flex-col items-center justify-center gap-4 md:w-[24rem] lg:w-[28rem]">
+          <div className="flex w-5/6 flex-col items-center justify-center gap-4 md:w-[24rem] lg:w-[28rem]">
             <button
               className="text-md  mt-8 w-full rounded-lg bg-[#FFBA49] p-4 py-2 text-white transition-all duration-200 ease-in hover:scale-105 active:scale-90  dark:bg-[#EF5B5B] dark:text-black md:text-lg "
               type="submit"
@@ -121,7 +121,7 @@ const LogIn = () => {
             </button>
           </div>
         </form>
-        <div className="flex w-3/4 flex-col items-center justify-center gap-4 md:w-[24rem] lg:w-[28rem]">
+        <div className="flex w-5/6 flex-col items-center justify-center gap-4 md:w-[24rem] lg:w-[28rem]">
           <button
             onClick={handleDemo}
             className="text-md w-full rounded-lg border border-[#FFBA49] p-4 py-2 font-bold text-[#FFBA49] transition-all duration-200 ease-in hover:scale-105 active:scale-90  dark:border-[#EF5B5B] dark:text-[#EF5B5B] md:text-lg "
