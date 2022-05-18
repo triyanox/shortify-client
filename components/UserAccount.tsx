@@ -83,7 +83,7 @@ const UpdateUser = (props: Props) => {
 
   return (
     <section className="mt-8 mb-16 flex w-full flex-col items-center justify-center gap-8 px-10 md:px-24 xl:mt-12  xl:flex-row xl:items-start xl:px-20">
-      <div className="mx-8 flex w-full flex-col items-center justify-center gap-4 sm:mx-16 lg:mx-0">
+      <div className="mx-8 flex w-full flex-col items-center px-8 md:px-0 justify-center gap-4 sm:mx-16 lg:mx-0">
         <h1 className="mb-8 w-[26rem] animate-gradient-x bg-gradient-to-r from-[#FFBA49] to-[#EF5B5B] bg-clip-text text-left text-3xl text-transparent md:w-[24rem] lg:w-[28rem]">
           Update Your Account
         </h1>
