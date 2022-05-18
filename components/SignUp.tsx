@@ -61,10 +61,10 @@ const SignUp = () => {
           Sign up
         </h1>
         <form
-          className="flex w-full flex-col items-center justify-center mx-8 md:mx-0 gap-2"
+          className="flex w-full flex-col items-center justify-center gap-2"
           onSubmit={handleSubmit}
         >
-          <div className="mb-4  w-[26rem] md:w-[24rem] lg:w-[28rem]">
+          <div className="mb-4  w-3/4 md:w-[24rem] lg:w-[28rem]">
             <input
               className="w-full appearance-none rounded-lg bg-gray-200  py-3 px-4 leading-tight text-gray-900  outline-none transition-all duration-500 focus:outline focus:outline-[#FFBA49] dark:bg-zinc-800 dark:text-gray-200 dark:focus:outline dark:focus:outline-[#EF5B5B]"
               id="username"
@@ -75,7 +75,7 @@ const SignUp = () => {
               required
             />
           </div>
-          <div className="mb-4 w-[26rem] md:w-[24rem] lg:w-[28rem]">
+          <div className="mb-4 w-3/4 md:w-[24rem] lg:w-[28rem]">
             <input
               className="w-full appearance-none rounded-lg bg-gray-200 py-3 px-4 leading-tight text-gray-900  outline-none transition-all duration-500 focus:outline focus:outline-[#FFBA49] dark:bg-zinc-800 dark:text-gray-200 dark:focus:outline dark:focus:outline-[#EF5B5B]"
               id="email"
@@ -86,7 +86,7 @@ const SignUp = () => {
               required
             />
           </div>
-          <div className=" w-[26rem] md:w-[24rem] lg:w-[28rem]">
+          <div className=" w-3/4 md:w-[24rem] lg:w-[28rem]">
             <input
               className="relative w-full appearance-none rounded-lg bg-gray-200  py-3 px-4 leading-tight text-gray-900  outline-none transition-all duration-500 focus:outline focus:outline-[#FFBA49] dark:bg-zinc-800 dark:text-gray-200 dark:focus:outline dark:focus:outline-[#EF5B5B]"
               id="password"
