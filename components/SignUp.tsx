@@ -61,7 +61,7 @@ const SignUp = () => {
           Sign up
         </h1>
         <form
-          className="flex w-full flex-col items-center justify-center px-8 md:px-0 gap-2"
+          className="flex w-full flex-col items-center justify-center mx-8 md:mx-0 gap-2"
           onSubmit={handleSubmit}
         >
           <div className="mb-4  w-[26rem] md:w-[24rem] lg:w-[28rem]">
