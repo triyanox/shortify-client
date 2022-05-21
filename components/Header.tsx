@@ -52,7 +52,7 @@ function Header() {
         <div className="  inline-flex  w-full text-xl ">
           <HomeLink href="/" text="Shortify" />
         </div>
-        <div className="flex w-full flex-row items-center justify-end gap-4">
+        <div className="flex w-full flex-row items-center justify-end gap-1 md:gap-4">
           {!loggedIn ? (
             <Fragment>
               <NavItem href="/signup" text="Sign Up" />
