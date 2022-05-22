@@ -11,9 +11,9 @@ const UrlsCreated = () => {
   }
   const urlsCreated = Paginate(urls, 10, page)
   return (
-    <section className="mt-8 w-full h-screen  items-center gap-2  px-8 py-2 md:px-24 xl:px-20">
-       {urlsCreated !== [] &&  <div className="mb-8 grid w-full grid-rows-10 items-center">
-       
+    <section className="mt-8 h-screen w-full  items-center gap-2  px-8 py-2 md:px-24 xl:px-20">
+      {urlsCreated.length > 0 && (
+        <div className="mb-8 grid w-full grid-rows-10 items-center">
           {urlsCreated.map(
             (
               url: { short_url: string; original_url: string },
@@ -25,17 +25,17 @@ const UrlsCreated = () => {
                 key={i}
               />
             )
-       )}
-        </div> }
-     {
-       urls.length > 10 && <Pagination
-        pageSize={10}
-        totalItems={urls.length}
-        onPageChange={handleChange}
-        currentPage={page}
-      />
-     }
-      
+          )}
+        </div>
+      )}
+      {urls.length > 10 && (
+        <Pagination
+          pageSize={10}
+          totalItems={urls.length}
+          onPageChange={handleChange}
+          currentPage={page}
+        />
+      )}
     </section>
   )
 }
