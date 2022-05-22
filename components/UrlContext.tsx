@@ -1,15 +1,19 @@
 import { createContext, useContext } from 'react'
 
 type UrlContext = {
-  urls: {
-    original_url: string
-    short_url: string
-  }[]
+  urls:
+    | {
+        original_url: string
+        short_url: string
+      }[]
+    | null
   setUrls: (
-    url: {
-      original_url: string
-      short_url: string
-    }[]
+    url:
+      | {
+          original_url: string
+          short_url: string
+        }[]
+      | null
   ) => void
 }
 
