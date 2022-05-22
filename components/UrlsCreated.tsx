@@ -10,9 +10,10 @@ const UrlsCreated = () => {
     setPage(page)
   }
   const urlsCreated = Paginate(urls, 10, page)
+  console.log(urlsCreated)
   return (
     <section className="mt-8 h-screen w-full  items-center gap-2  px-8 py-2 md:px-24 xl:px-20">
-      {urlsCreated.length > 0 && (
+      {urlsCreated && (
         <div className="mb-8 grid w-full grid-rows-10 items-center">
           {urlsCreated.map(
             (
@@ -28,7 +29,7 @@ const UrlsCreated = () => {
           )}
         </div>
       )}
-      {urls.length > 10 && (
+      {urls && urls.length > 10 && (
         <Pagination
           pageSize={10}
           totalItems={urls.length}
