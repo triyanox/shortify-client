@@ -4,6 +4,7 @@ import UrlsCreated from './UrlsCreated'
 import * as urlService from '../services/urlService'
 import { useEffect, useState } from 'react'
 import { UrlContext } from './UrlContext'
+import toast, { Toaster } from 'react-hot-toast'
 type Props = {
   user: { email: string; iat: number; name: string; _id: string }
 }
@@ -14,10 +15,15 @@ const Dashboard = (props: Props) => {
   }, [])
 
   async function getAllUrls() {
+    const urls = urlService.getAllUrls()
     try {
-      const urls = await urlService.getAllUrls()
-
-      const myUrls = urls.data
+      toast.promise(urls, {
+        loading: 'Loading',
+        success: 'Urls fetched successfully',
+        error: 'Unable to fetch urls',
+      })
+      const fetched = await urls
+      const myUrls = fetched.data
         .map((url: any) => {
           return { original_url: url.original_url, short_url: url.short_url }
         })
@@ -46,6 +52,11 @@ const Dashboard = (props: Props) => {
         <User name={props.user.name} email={props.user.email} />
         <CreateUrls />
         <UrlsCreated />
+        <Toaster
+          toastOptions={{
+            position: 'bottom-right',
+          }}
+        />
       </section>
     </UrlContext.Provider>
   )
