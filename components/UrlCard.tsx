@@ -77,16 +77,16 @@ const UrlCard = (props: Props) => {
     let short_url = props.shortUrl
     const remove = urlService.deleteUrl(short_url)
     try {
-      if (urls.length !== 0) {
-        let updatedUrls = removeItem(urls, short_url)
-        setUrls(updatedUrls)
-      }
-      await remove
       toast.promise(remove, {
         loading: 'Loading',
         success: 'Successfully removed',
         error: 'Failed to remove',
       })
+      await remove
+      if (urls !== null) {
+        let updatedUrls = removeItem(urls, short_url)
+        setUrls(updatedUrls)
+      }
     } catch (ex: any) {
       setUrls(urls)
       if (ex.response.status === 404) {
@@ -110,68 +110,70 @@ const UrlCard = (props: Props) => {
           </a>
         </Link>
       </div>
-      <div className="flex flex-row items-center justify-center gap-2 text-2xl text-[#FFBA49]   dark:text-[#EF5B5B]">
-        <button
-          className="group transition-all duration-300 hover:scale-110 active:scale-95"
-          onClick={copyToClipboard}
-        >
-          {!copied ? (
-            <FiCopy />
-          ) : (
-            <BsFillCheckCircleFill className="text-green-400 " />
-          )}
-          <span
-            className="absolute -right-5 mt-2  w-auto min-w-max origin-top scale-0 rounded-md
-                    bg-[#FFBA49] p-2  px-3 text-sm font-semibold 
-    text-white shadow-xl 
-    transition-all duration-100 group-hover:scale-100 dark:bg-[#EF5B5B] dark:text-black"
+      {props.originalUrl !== '' && (
+        <div className="flex flex-row items-center justify-center gap-2 text-2xl text-[#FFBA49]   dark:text-[#EF5B5B]">
+          <button
+            className="group transition-all duration-300 hover:scale-110 active:scale-95"
+            onClick={copyToClipboard}
           >
-            {!copied ? 'Copy' : 'Copied'}
-          </span>
-        </button>
-        <Link href={`/edit/${props.shortUrl}`}>
-          <a className="group  transition-all duration-300 hover:scale-110 active:scale-95">
-            <FiEdit2 />
+            {!copied ? (
+              <FiCopy />
+            ) : (
+              <BsFillCheckCircleFill className="text-green-400 " />
+            )}
             <span
-              className="absolute -right-4 mt-2   w-auto min-w-max origin-top scale-0 rounded-md
-                    bg-[#FFBA49] p-2  px-3 text-sm font-semibold 
-    text-white shadow-xl 
-    transition-all duration-100 group-hover:scale-100 dark:bg-[#EF5B5B] dark:text-black"
+              className="absolute -right-5 mt-2  w-auto min-w-max origin-top scale-0 rounded-md
+                bg-[#FFBA49] p-2  px-3 text-sm font-semibold 
+text-white shadow-xl 
+transition-all duration-100 group-hover:scale-100 dark:bg-[#EF5B5B] dark:text-black"
             >
-              Edit
+              {!copied ? 'Copy' : 'Copied'}
             </span>
-          </a>
-        </Link>
+          </button>
+          <Link href={`/edit/${props.shortUrl}`}>
+            <a className="group  transition-all duration-300 hover:scale-110 active:scale-95">
+              <FiEdit2 />
+              <span
+                className="absolute -right-4 mt-2   w-auto min-w-max origin-top scale-0 rounded-md
+                bg-[#FFBA49] p-2  px-3 text-sm font-semibold 
+text-white shadow-xl 
+transition-all duration-100 group-hover:scale-100 dark:bg-[#EF5B5B] dark:text-black"
+              >
+                Edit
+              </span>
+            </a>
+          </Link>
 
-        <button
-          onClick={openModal}
-          className="group transition-all duration-300 hover:scale-110 active:scale-95"
-        >
-          <IoIosAnalytics />
-          <span
-            className="absolute  -right-8 mt-2  w-auto min-w-max origin-top scale-0 rounded-md
-                    bg-[#FFBA49] p-2  px-3 text-sm font-semibold 
-    text-white shadow-xl 
-    transition-all duration-100 group-hover:scale-100 dark:bg-[#EF5B5B] dark:text-black"
+          <button
+            onClick={openModal}
+            className="group transition-all duration-300 hover:scale-110 active:scale-95"
           >
-            Analytics
-          </span>
-        </button>
-        <button
-          className="group transition-all duration-300 hover:scale-110 active:scale-95"
-          onClick={deleteUrl}
-        >
-          <MdDelete />
-          <span
-            className="absolute -right-6 mt-2   w-auto min-w-max origin-top scale-0 rounded-md
-                    bg-[#FFBA49] p-2  px-3 text-sm font-semibold 
-    text-white shadow-xl 
-    transition-all duration-100 group-hover:scale-100 dark:bg-[#EF5B5B] dark:text-black"
+            <IoIosAnalytics />
+            <span
+              className="absolute  -right-8 mt-2  w-auto min-w-max origin-top scale-0 rounded-md
+                bg-[#FFBA49] p-2  px-3 text-sm font-semibold 
+text-white shadow-xl 
+transition-all duration-100 group-hover:scale-100 dark:bg-[#EF5B5B] dark:text-black"
+            >
+              Analytics
+            </span>
+          </button>
+          <button
+            className="group transition-all duration-300 hover:scale-110 active:scale-95"
+            onClick={deleteUrl}
           >
-            Delete
-          </span>
-        </button>
-      </div>
+            <MdDelete />
+            <span
+              className="absolute -right-6 mt-2   w-auto min-w-max origin-top scale-0 rounded-md
+                bg-[#FFBA49] p-2  px-3 text-sm font-semibold 
+text-white shadow-xl 
+transition-all duration-100 group-hover:scale-100 dark:bg-[#EF5B5B] dark:text-black"
+            >
+              Delete
+            </span>
+          </button>
+        </div>
+      )}
       <Toaster position="bottom-right" reverseOrder={false} />
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
