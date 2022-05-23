@@ -12,8 +12,8 @@ const UrlsCreated = () => {
   const urlsCreated = Paginate(urls, 10, page)
   console.log(urlsCreated)
   return (
-    <section className="mt-8 h-screen w-full  items-center gap-2  px-8 py-2 md:px-24 xl:px-20">
-      {urlsCreated && (
+    <section className="mt-8 max-h-screen w-full  items-center gap-2  px-8 py-2 md:px-24 xl:px-20">
+      {urls !== null && (
         <div className="mb-8 grid w-full grid-rows-10 items-center">
           {urlsCreated.map(
             (
