@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import { ReactNode } from 'react'
 import Footer from '../components/Footer'
+import { useUser } from '../components/userContext'
 
 const Layout = (props: {
   pageTitle: string
@@ -10,6 +11,7 @@ const Layout = (props: {
   children: ReactNode
   preview: string
 }) => {
+  const { loggedIn } = useUser()
   return (
     <>
       <Head>
@@ -41,10 +43,9 @@ const Layout = (props: {
         <meta property="og:title" content="Shortify - URL shortener servic" />
         <meta property="og:description" content="URL shortener servic" />
       </Head>
-
       <Header />
       {props.children}
-      <Footer />
+      {!loggedIn && <Footer />}
     </>
   )
 }
