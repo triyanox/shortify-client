@@ -7,14 +7,7 @@ type UrlContext = {
         short_url: string
       }[]
     | null
-  setUrls: (
-    url:
-      | {
-          original_url: string
-          short_url: string
-        }[]
-      | null
-  ) => void
+  setUrls: (url: any) => void
 }
 
 export const UrlContext = createContext<UrlContext>({} as UrlContext)
