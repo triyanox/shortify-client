@@ -93,7 +93,7 @@ const UpdateUser = (props: Props) => {
         >
           <div className="mb-4 w-11/12 md:w-[24rem] lg:w-[28rem]">
             <input
-              className="w-full appearance-none rounded-lg bg-gray-200  py-3 px-4 leading-tight text-gray-900 shadow outline-none transition-all duration-500 focus:outline focus:outline-[#FFBA49] dark:bg-zinc-800 dark:text-gray-200 dark:focus:outline dark:focus:outline-[#EF5B5B]"
+              className="w-full appearance-none  rounded-lg bg-zinc-50 py-3  px-4 leading-tight text-gray-900 outline-none  transition-all duration-500 focus:outline focus:outline-[#FFBA49] dark:bg-zinc-900  dark:text-gray-200 dark:focus:outline dark:focus:outline-[#EF5B5B]"
               id="username"
               type="text"
               name="name"
@@ -104,7 +104,7 @@ const UpdateUser = (props: Props) => {
           </div>
           <div className="mb-4 w-11/12 md:w-[24rem] lg:w-[28rem]">
             <input
-              className="w-full appearance-none rounded-lg bg-gray-200 py-3 px-4 leading-tight text-gray-900 shadow outline-none transition-all duration-500 focus:outline focus:outline-[#FFBA49] dark:bg-zinc-800 dark:text-gray-200 dark:focus:outline dark:focus:outline-[#EF5B5B]"
+              className="w-full appearance-none  rounded-lg bg-zinc-50 py-3  px-4 leading-tight text-gray-900 outline-none  transition-all duration-500 focus:outline focus:outline-[#FFBA49] dark:bg-zinc-900  dark:text-gray-200 dark:focus:outline dark:focus:outline-[#EF5B5B]"
               id="email"
               type="email"
               name="email"
@@ -115,7 +115,7 @@ const UpdateUser = (props: Props) => {
           </div>
           <div className=" w-11/12 md:w-[24rem] lg:w-[28rem]">
             <input
-              className="relative w-full appearance-none rounded-lg bg-gray-200  py-3 px-4 leading-tight text-gray-900 shadow outline-none transition-all duration-500 focus:outline focus:outline-[#FFBA49] dark:bg-zinc-800 dark:text-gray-200 dark:focus:outline dark:focus:outline-[#EF5B5B]"
+              className="w-full appearance-none  rounded-lg bg-zinc-50 py-3  px-4 leading-tight text-gray-900 outline-none  transition-all duration-500 focus:outline focus:outline-[#FFBA49] dark:bg-zinc-900  dark:text-gray-200 dark:focus:outline dark:focus:outline-[#EF5B5B]"
               id="password"
               onChange={handleChange}
               name="password"
