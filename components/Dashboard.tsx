@@ -17,11 +17,6 @@ const Dashboard = (props: Props) => {
   async function getAllUrls() {
     const urls = urlService.getAllUrls()
     try {
-      toast.promise(urls, {
-        loading: 'Loading',
-        success: 'Urls fetched successfully',
-        error: 'Unable to fetch urls',
-      })
       const fetched = await urls
       const myUrls = fetched.data
         .map((url: any) => {
@@ -29,6 +24,7 @@ const Dashboard = (props: Props) => {
         })
         .reverse()
       setUrls(myUrls)
+      toast.success('Urls loaded successfully')
     } catch {
       setUrls([
         {
