@@ -10,7 +10,6 @@ const UrlsCreated = () => {
     setPage(page)
   }
   const urlsCreated = Paginate(urls, 10, page)
-  console.log(urlsCreated)
   return (
     <section className="mt-8 max-h-screen w-full  items-center gap-2  px-8 py-2 md:px-24 xl:px-20">
       {urls !== null && (
